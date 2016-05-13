@@ -21,6 +21,6 @@
      * @return true if the IMS, false means the other.
      */
     public static boolean isImsCall() {
-        return TelecomAdapter.getInstance().somcGetBoolCommand(
-                SomcTelecomAdapterCommandDefine.GET_COMMAND_IS_IMS, null);
+        return TelecomAdapter.getInstance().GetBoolCommand(
+                TelecomAdapterCommandDefine.GET_COMMAND_IS_IMS, null);
     }
