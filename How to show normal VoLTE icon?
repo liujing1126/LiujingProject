@@ -1,0 +1,26 @@
+/**
+     * Gets whether the call is Volte call.
+     *
+     * @param context
+     * @param call
+     * @return true if it is volte call, false means the other.
+     */
+    public static boolean isVolteCall(Context context, Call call) {
+        if (call == null || context == null) {
+            return false;
+        }
+
+        TelephonyManager tm =
+                (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
+        return tm.isVolteAvailableForSubscriber(call.getSubId()) && isImsCall();
+    }
+    
+/**    
+ * Gets whether the call is IMS.
+     *
+     * @return true if the IMS, false means the other.
+     */
+    public static boolean isImsCall() {
+        return TelecomAdapter.getInstance().somcGetBoolCommand(
+                SomcTelecomAdapterCommandDefine.GET_COMMAND_IS_IMS, null);
+    }
