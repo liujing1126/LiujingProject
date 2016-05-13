@@ -1,0 +1,10 @@
+private boolean needHandleDSCases(int oldNetworkMode, int newNetworkMode) {
+        int activeSubscriptionInfoCount = mSubscriptionManager.getActiveSubscriptionInfoCount(); //获得实际的sim个数，比如，是ds手机，插一张卡。则个数是1；插两张才是2；
+        if (!(mIsMultiSimEnabled && activeSubscriptionInfoCount > 1)) { //如果只用mIsMultiSimEnabled判断， 这个只会判断是否为DS 手机。
+            return false;
+        }
+        
+public boolean isMultiSimEnabled() {
+        return (multiSimConfig.equals("dsds") || multiSimConfig.equals("dsda") ||
+            multiSimConfig.equals("tsts"));
+    }       
