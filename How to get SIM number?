@@ -1,4 +1,4 @@
 
     TelephonyManager telephonyManager = (TelephonyManager)mcontext.getSystemService(mcontext.TELEPHONY_SERVICE);
         String myNumber = telephonyManager.getLine1Number();
-        android.util.Log.d("lj","SomcCallBarringEditPreference:myNumber= "+myNumber);
+        android.util.Log.d("lj","myNumber= "+myNumber);
