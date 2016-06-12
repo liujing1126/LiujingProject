@@ -1,0 +1,14 @@
+private int readMissCall() {
+        int result = 0;
+        Cursor cursor = getContext().getContentResolver().query(CallLog.Calls.CONTENT_URI, new String[] {
+                Calls.TYPE
+             }, " type=? and new=?", new String[] {
+                    Calls.MISSED_TYPE + "", "1"
+            }, "date desc");
+
+        if (cursor != null) {
+            result = cursor.getCount();
+            cursor.close();
+        }
+        return result;
+    }
