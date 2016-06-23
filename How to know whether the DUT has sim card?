@@ -1,0 +1,3 @@
+private boolean hasSimCard(int sub) {
+    	return TelephonyManager.getDefault().hasIccCard(sub);
+    }
