@@ -1,0 +1,4 @@
+private boolean isAirplaneModeOn() {
+        return (android.provider.Settings.Global.getInt(this.getContentResolver(),
+                android.provider.Settings.Global.AIRPLANE_MODE_ON, 0) != 0);
+    }
